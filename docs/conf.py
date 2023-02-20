@@ -49,6 +49,7 @@ extensions = [
     "sphinx.ext.autosectionlabel",
     "numpydoc",
     "nbsphinx",
+    "sphinx.ext.mathbase",
     #"IPython.sphinxext.ipython_console_highlighting",
 ]
 
