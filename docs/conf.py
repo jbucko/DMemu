@@ -35,21 +35,22 @@ version = release = '1.0'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-latex_engine = 'xelatex'
+
 extensions = [
-    "sphinx.ext.autodoc",
-    "sphinx.ext.autosummary",
-    "sphinx.ext.coverage",
-    "sphinx.ext.doctest",
-    "sphinx.ext.extlinks",
-    "sphinx.ext.ifconfig",
-    "sphinx.ext.napoleon",
-    "sphinx.ext.todo",
+    # "sphinx.ext.autodoc",
+    # "sphinx.ext.autosummary",
+    # "sphinx.ext.coverage",
+    # "sphinx.ext.doctest",
+    # "sphinx.ext.extlinks",
+    # "sphinx.ext.ifconfig",
+    # "sphinx.ext.napoleon",
+    # "sphinx.ext.todo",
     "sphinx.ext.mathjax",
-    "sphinx.ext.viewcode",
-    "sphinx.ext.autosectionlabel",
-    "numpydoc",
-    "nbsphinx",
+    # "sphinx.ext.viewcode",
+    # "sphinx.ext.autosectionlabel",
+    # "numpydoc",
+    # "nbsphinx",
+    "sphinx_rtd_theme"
 
     #"IPython.sphinxext.ipython_console_highlighting",
 ]
@@ -73,9 +74,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 #html_theme = 'bootstrap'
 #html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
-import sphinx_readable_theme
+# import sphinx_readable_theme
 
-html_theme_path = [sphinx_readable_theme.get_html_theme_path()]
+# html_theme_path = [sphinx_readable_theme.get_html_theme_path()]
 # html_theme = 'readable'
 html_theme = 'sphinx_rtd_theme'
 
