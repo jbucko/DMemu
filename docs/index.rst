@@ -6,7 +6,6 @@ Contents
    :maxdepth: 2
 
    installation
-   tutorials
    contributing
    changelog
 
