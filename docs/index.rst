@@ -7,9 +7,7 @@ Contents
 
    installation
    tutorials
-   contents
    contributing
-   authors
    changelog
 
 Indices and tables
