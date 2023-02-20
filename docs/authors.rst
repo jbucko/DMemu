@@ -2,5 +2,5 @@
 Authors
 =======
 
-* `The Author <https://USERNAME.github.io/>`_ - `GitHub <https://github.com/USERNAME>`_
+* `The Author <https://jbucko.github.io/>`_ - `GitHub <https://github.com/jbucko>`_
 
