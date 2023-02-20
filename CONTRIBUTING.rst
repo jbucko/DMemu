@@ -20,7 +20,7 @@ In case you want to make substantial change to the code, you can fork the reposi
 
        git clone https://github.com/<YOURUSERNAME>/DMemu.git
        cd DMemu
-       git checkout -b <BRANCHNAME
+       git checkout -b <BRANCHNAME>
 
 
 where ``<YOURUSERNAME>`` and ``<BRANCHNAME>`` are your Github username and the name of new branch for local development respectively.
