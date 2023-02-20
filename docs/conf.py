@@ -75,7 +75,7 @@ import sphinx_readable_theme
 
 html_theme_path = [sphinx_readable_theme.get_html_theme_path()]
 # html_theme = 'readable'
-html_theme = 'alabaster'
+html_theme = 'bootstrap'
 
 pygments_style = "trac"
 
