@@ -1,4 +1,7 @@
-# TBDemu
+# DMemu 
+
+`DMemu` is a python package implementing nonlinear response of different dark matter extension of $\Lambda$CDM model. Using a fitting function or an emulator, a nonlinear $\Lambda$CDM matter power spectrum is modified to accommodate a nonlinear matter power spectrum of a specific $\LambdaCDM$ extension. Currently included emulators are two-body decaying dark matter (`TBDemu`).
+## TBDemu
 
 ## Describtion
 
