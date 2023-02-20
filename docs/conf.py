@@ -46,7 +46,6 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
     "sphinx.ext.autosectionlabel",
-    'sphinx_copybutton',
     "numpydoc",
     "nbsphinx",
 
