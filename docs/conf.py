@@ -47,9 +47,10 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.mathjax",
     "sphinx.ext.autosectionlabel",
+    "sphinx.ext.mathbase",
     "numpydoc",
     "nbsphinx",
-    "sphinx.ext.mathbase",
+
     #"IPython.sphinxext.ipython_console_highlighting",
 ]
 
