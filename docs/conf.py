@@ -18,12 +18,12 @@ sys.path.insert(0, os.path.abspath('../src/'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'simple_python_package_template'
-copyright = '2020, Sambit Giri'
-author = 'Sambit Giri'
+project = 'DMemu'
+copyright = '2023, Jozef Bucko'
+author = 'Jozef Bucko'
 
 # The full version, including alpha/beta/rc tags
-version = release = '2.1'
+version = release = '1.0'
 
 
 # -- General configuration ---------------------------------------------------
