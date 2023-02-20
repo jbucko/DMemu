@@ -17,7 +17,7 @@ Two-body decaying dark matter
 
 Description
 ^^^^^^^^^^^^^^^^^^^^^^
-``TBDemu`` is a python library implementing a nonlinear response of two-body decays within the dark matter [[1]](#1). The phenomenology of two-body decaying dark matter (2bDDM) is based on two parameters: the decay rate :math:`$\Gamma$` (in 1/Gyr) and the magnitude of velocity kicks obtained by decay products :math: `$v_k$` (in km/s). Additionally, one can assume only a fraction of decaying dark matter $f$ in the total dark matter abundance: :math:`$f=\Omega_{\rm m, decaying}/\Omega_{\rm m, total}$`. The ``TBDemu`` emulator is built on gravity-only :math:`$N$`-body simulations run by ``Pkdgrav3`` code [[2]](#2). The emulator predicts
+``TBDemu`` is a python library implementing a nonlinear response of two-body decays within the dark matter [[1]](#1). The phenomenology of two-body decaying dark matter (2bDDM) is based on two parameters: the decay rate :math:`$\Gamma$` (in 1/Gyr) and the magnitude of velocity kicks obtained by decay products :math:`v_k` (in km/s). Additionally, one can assume only a fraction of decaying dark matter $f$ in the total dark matter abundance: :math:`$f=\Omega_{\rm m, decaying}/\Omega_{\rm m, total}$`. The ``TBDemu`` emulator is built on gravity-only :math:`$N$`-body simulations run by ``Pkdgrav3`` code [[2]](#2). The emulator predicts
 
 .. math::
 
