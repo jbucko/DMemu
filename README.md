@@ -6,7 +6,7 @@
 
 ## Describtion
 
-`TBDemu` is a python library implementing a nonlinear response of two-body decays within the dark matter [[1]](#1). The phenomenology of two-body decaying dark matter (2bDDM) is based on two parameters: the decay rate $\Gamma$ (in 1/Gyr) and the magnitude of velocity kicks obtained by decay products $v_k$ (in km/s). Additionally, one can assume only a fraction of decaying dark matter $f$ in the total dark matter abundance: $f=\Omega_{\rm m, decaying}/\Omega_{\rm m, total}$. The `TBDemu` emulator is built on gravity-only $N$-body simulations run by `Pkdgrav3` code [[2]](#2). The emulator predicts
+`TBDemu` is an emulator implementing a nonlinear response of two-body decays within the dark matter [[1]](#1). The phenomenology of two-body decaying dark matter (2bDDM) is based on two parameters: the decay rate $\Gamma$ (in 1/Gyr) and the magnitude of velocity kicks obtained by decay products $v_k$ (in km/s). Additionally, one can assume only a fraction of decaying dark matter $f$ in the total dark matter abundance: $f=\Omega_{\rm m, decaying}/\Omega_{\rm m, total}$. The `TBDemu` emulator is built on gravity-only $N$-body simulations run by `Pkdgrav3` code [[2]](#2). The emulator predicts
 
 <p>$\mathcal{S}^{\Gamma,v_k,f}_{\rm DDM}(k,z) = P^{\Gamma,v_k,f}_{\rm DDM}(k,z)/P_{\Lambda \rm CDM}(k,z)$,</p>
 
@@ -32,11 +32,11 @@ The requirements for the package are listed in `requirements.txt` and will be in
 
 ```python
 import numpy as np
-import TBDemu
+import DMemu
 import matplotlib.pyplot as plt
 
 # load emulator
-emul = TBDemu.emulator()
+emul = DMemu.TBDemu()
 
 # predict suppressions between kmin and kmax for a single redshift
 kmin = 1e-3 # in h/Mpc
