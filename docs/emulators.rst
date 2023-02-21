@@ -23,7 +23,7 @@ Description
     \mathcal{S}^{\Gamma,v_k,f}_{\rm DDM}(k,z) = P^{\Gamma,v_k,f}_{\rm DDM}(k,z)/P_{\Lambda \rm CDM}(k,z),
 
 
-thus a ratio of nonlinear matter power spectrum in the scenario including dark matter decays and (nonlinear) $\Lambda \rm CDM$ matter power spectrum. For more details, see Ref. [[1]](#1). The emulator was trained using *Sinusoidal representation networks* (SIRENs).
+thus a ratio of nonlinear matter power spectrum in the scenario including dark matter decays and (nonlinear) :math:`\Lambda \rm CDM matter power spectrum. For more details, see Ref. [[1]](#1). The emulator was trained using *Sinusoidal representation networks* (SIRENs).
 
 Quickstart
 ^^^^^^^^^^
