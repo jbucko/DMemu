@@ -25,12 +25,20 @@ author = 'Jozef Bucko'
 # The full version, including alpha/beta/rc tags
 version = release = '1.0'
 
+# Paths
+html_static_path = ['static']
 
 # -- General configuration ---------------------------------------------------
 # If your documentation needs a minimal Sphinx version, state it here.
 #needs_sphinx = '2.3'
 
 #pygments_style = 'sphinx'
+
+html_theme_options = {
+    # General
+    'display_version'           : False,
+    'logo_only'                 : False,
+}
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -104,6 +112,8 @@ exclude_patterns = [
     "templates",
     #"**.ipynb_checkpoints",
 ]
+
+html_logo              = html_static_path[0] + '/icon.jpg'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
