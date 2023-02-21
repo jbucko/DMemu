@@ -50,7 +50,8 @@ extensions = [
     # "sphinx.ext.autosectionlabel",
     # "numpydoc",
     # "nbsphinx",
-    "sphinx_rtd_theme"
+    'sphinx_copybutton',
+    "sphinx_rtd_theme",
 
     #"IPython.sphinxext.ipython_console_highlighting",
 ]
