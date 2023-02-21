@@ -5,7 +5,6 @@ Emulators
 One-body decaying dark matter
 -----------------------------
 
-:math:`h \equiv H_0/(100\, \text{km}\, \text{s}^{-1}\, \text{Mpc}^{-1})`
 To be added soon...
 
 Quickstart
@@ -17,7 +16,7 @@ Two-body decaying dark matter
 
 Description
 ^^^^^^^^^^^
-``TBDemu`` is a python library implementing a nonlinear response of two-body decays within the dark matter. The phenomenology of two-body decaying dark matter (2bDDM) is based on two parameters: the decay rate :raw-math:$\Gamma$ (in 1/Gyr) and the magnitude of velocity kicks obtained by decay products :math:`v_k` (in km/s). Additionally, one can assume only a fraction of decaying dark matter $f$ in the total dark matter abundance: :math:`f=\Omega_{\rm m, decaying}/\Omega_{\rm m, total}`. The ``TBDemu`` emulator is built on gravity-only :math:`N`-body simulations run by ``Pkdgrav3`` code . The emulator predicts
+``TBDemu`` is a python library implementing a nonlinear response of two-body decays within the dark matter. The phenomenology of two-body decaying dark matter (2bDDM) is based on two parameters: the decay rate :math:`\Gamma` (in 1/Gyr) and the magnitude of velocity kicks obtained by decay products :math:`v_k` (in km/s). Additionally, one can assume only a fraction of decaying dark matter :math:`f in the total dark matter abundance: :math:`f=\Omega_{\rm m, decaying}/\Omega_{\rm m, total}`. The ``TBDemu`` emulator is built on gravity-only :math:`N`-body simulations run by ``Pkdgrav3`` code . The emulator predicts
 
 .. math::
 
@@ -62,15 +61,15 @@ Quickstart
 Parameter space
 ^^^^^^^^^^^^^^^
 
-- decay rate: :math:`$\Gamma \in [0,1/13.5]$` Gyr :math:`$^{-1}$`  
-- velocity kick magnitude: :math:`$v_k \in [0,5000]$` km/s  
-- fraction of 2bDDM: :math:`$f \in [0,1]$`  
-- scales: :math:`$k < 6$` h/Mpc  
-- redshifts: :math:`$z < 2.35$`
+- decay rate: :math:`\Gamma \in [0,1/13.5]` Gyr :math:`^{-1}`  
+- velocity kick magnitude: :math:`v_k \in [0,5000]` km/s  
+- fraction of 2bDDM: :math:`f \in [0,1]`  
+- scales: :math:`k < 6` h/Mpc  
+- redshifts: :math:`z < 2.35`
 
-Input format of :math:`$k$` and :math:`$z$`
+Input format of :math:`k` and :math:`z`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Single value of $k$ and $z$:
+#. Single value of :math:`k` and :math:`z`:
     
 .. code-block:: python3
 
@@ -80,7 +79,7 @@ Input format of :math:`$k$` and :math:`$z$`
 
 Provides a single suppression value.
 
-#. Single value of :math:`$z$` for multiple scales :math:`$k$`:
+#. Single value of :math:`z` for multiple scales :math:`k`:
     
 .. code-block:: python3
 
@@ -88,9 +87,9 @@ Provides a single suppression value.
     z = 0.0
     pks = emul.predict(k,z,fraction,velocity_kick,gamma_decay)
 
-Provides a list of suppressions at desired scales for a single redshift :math:`$z$`.
+Provides a list of suppressions at desired scales for a single redshift :math:`z`.
 
-#. Single value of $k$ for multiple redshifts :math:`$z$`:
+#. Single value of :math:`k` for multiple redshifts :math:`z`:
     
 .. code-block:: python3
 
@@ -98,9 +97,9 @@ Provides a list of suppressions at desired scales for a single redshift :math:`$
     z = np.array([0.0,1.0,2.0])
     pks = emul.predict(k,z,fraction,velocity_kick,gamma_decay)
 
-Provides a list of suppressions at a given scale for all redshift values $z$.
+Provides a list of suppressions at a given scale for all redshift values :math:`z`.
 
-#. Multiple scales :math:`$k$` for multiple redshifts :math:`$z$`:
+#. Multiple scales :math:`k` for multiple redshifts :math:`z`:
     
 .. code-block:: python3
 
@@ -108,12 +107,12 @@ Provides a list of suppressions at a given scale for all redshift values $z$.
     z = np.array([0.0,1.0,2.0])
     pks = emul.predict(k,z,fraction,velocity_kick,gamma_decay)
 
-The above code provides three suppression values, first for $k=0.1$ and $z=0.0$, second for $k=0.5$ and $z=1.0$ and last for $k=1.0$ and $z=2.0$. The code checks that the lengths of both array are equal.
+The above code provides three suppression values, first for :math:`k=0.1` and :math:`z=0.0`, second for :math:`k=0.5` and :math:`z=1.0` and last for :math:`k=1.0` and :math:`z=2.0`. The code checks that the lengths of both array are equal.
     
 Extrapolation
 ^^^^^^^^^^^^^
 
-Extrapolation for :math:`$\Gamma$`, :math:`$v_k$`, :math:`$f$` and :math:`$z$` is not allowed as the trained architecture cannot reliably predict outside the training domain. Extrapolation for :math:`$k>6$` h/Mpc is done by adding a constant suppression continuously attached to the one provided by an emulator, see the figure below. 
+Extrapolation for :math:`\Gamma`, :math:`v_k`, :math:`f` and :math:`z` is not allowed as the trained architecture cannot reliably predict outside the training domain. Extrapolation for :math:`k>6` h/Mpc is done by adding a constant suppression continuously attached to the one provided by an emulator, see the figure below. 
 
 .. figure:: ../examples/tbdemu_extrapolation.jpeg
    :width: 65%
