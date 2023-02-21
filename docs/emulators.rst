@@ -69,43 +69,43 @@ Parameter space
 
 Input format of :math:`k` and :math:`z`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Single value of :math:`k` and :math:`z`:
+#. **Single value of** :math:`k` **and** :math:`z`:
     
-.. code-block:: python3
+    .. code-block:: python3
 
-    k = 0.10 # in h/Mpc
-    z = 0.0
-    pks = emul.predict(k,z,fraction,velocity_kick,gamma_decay)
+        k = 0.10 # in h/Mpc
+        z = 0.0
+        pks = emul.predict(k,z,fraction,velocity_kick,gamma_decay)
 
-Provides a single suppression value.
+    Provides a single suppression value.
 
-#. Single value of :math:`z` for multiple scales :math:`k`:
+#. **Single value of** :math:`z` **for multiple scales** :math:`k`:
     
-.. code-block:: python3
+    .. code-block:: python3
 
-    k = np.logspace(-2,0,10) # in h/Mpc
-    z = 0.0
-    pks = emul.predict(k,z,fraction,velocity_kick,gamma_decay)
+        k = np.logspace(-2,0,10) # in h/Mpc
+        z = 0.0
+        pks = emul.predict(k,z,fraction,velocity_kick,gamma_decay)
 
-Provides a list of suppressions at desired scales for a single redshift :math:`z`.
+    Provides a list of suppressions at desired scales for a single redshift :math:`z`.
 
-#. Single value of :math:`k` for multiple redshifts :math:`z`:
+#. **Single value of** :math:`k` **for multiple redshifts** :math:`z`:
     
-.. code-block:: python3
+    .. code-block:: python3
 
-    k = 0.10 # in h/Mpc
-    z = np.array([0.0,1.0,2.0])
-    pks = emul.predict(k,z,fraction,velocity_kick,gamma_decay)
+        k = 0.10 # in h/Mpc
+        z = np.array([0.0,1.0,2.0])
+        pks = emul.predict(k,z,fraction,velocity_kick,gamma_decay)
 
-Provides a list of suppressions at a given scale for all redshift values :math:`z`.
+    Provides a list of suppressions at a given scale for all redshift values :math:`z`.
 
-#. Multiple scales :math:`k` for multiple redshifts :math:`z`:
+#. **Multiple scales** :math:`k` **for multiple redshifts** :math:`z`:
     
-.. code-block:: python3
+    .. code-block:: python3
 
-    k = np.array([0.1,0.5,1.0]) # in h/Mpc
-    z = np.array([0.0,1.0,2.0])
-    pks = emul.predict(k,z,fraction,velocity_kick,gamma_decay)
+        k = np.array([0.1,0.5,1.0]) # in h/Mpc
+        z = np.array([0.0,1.0,2.0])
+        pks = emul.predict(k,z,fraction,velocity_kick,gamma_decay)
 
 The above code provides three suppression values, first for :math:`k=0.1` and :math:`z=0.0`, second for :math:`k=0.5` and :math:`z=1.0` and last for :math:`k=1.0` and :math:`z=2.0`. The code checks that the lengths of both array are equal.
     
