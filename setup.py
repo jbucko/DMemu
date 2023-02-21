@@ -5,17 +5,17 @@ Setup script
 '''
 from setuptools import setup
 
-TBDemu_link = 'https://github.com/jbucko/TBDemu.git'
+DMemu_link = 'https://github.com/jbucko/DMemu.git'
 
-setup(name='TBDemu',
+setup(name='DMemu',
       version='1.0',
       description='Emulator for predicting effects of two-body decaying dark matter on nonlinear matter power spectrum.',
       url=TBDemu_link,
       author='Jozef Bucko',
       author_email='joz.bucko@gmail.com',
-      package_dir = {'TBDemu' : 'src'},
-      packages=['TBDemu'],
-      package_data={'TBDemu': ['files/*']},
+      package_dir = {'DMemu' : 'src'},
+      packages=['DMemu'],
+      package_data={'DMemu': ['files/*']},
       install_requires=['numpy', 'torch','matplotlib'],
       zip_safe=False,
       include_package_data=True,
