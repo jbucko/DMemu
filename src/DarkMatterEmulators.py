@@ -6,7 +6,7 @@ import os,sys
 sys.path.append(os.path.dirname(__file__))
 from my_lib_colab5 import *
 
-class emulator():
+class TBDemu():
     def __init__(self):
         PATH_TO_EMULATOR = os.path.dirname(__file__) + '/files/'
         self.emulator_DDM_2body = torch.load(PATH_TO_EMULATOR + 'emulator3D_bohb_optimal.pth',map_location=torch.device('cpu'))
