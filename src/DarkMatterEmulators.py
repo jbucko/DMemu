@@ -5,6 +5,7 @@ import bisect
 import os,sys
 sys.path.append(os.path.dirname(__file__))
 from my_lib_colab5 import *
+from typing import Union
 
 class TBDemu():
     def __init__(self):
@@ -13,7 +14,7 @@ class TBDemu():
         self.t_means = torch.tensor(np.genfromtxt(PATH_TO_EMULATOR+'PCA_means.csv'))
         self.t_eigenvectors = torch.tensor(np.genfromtxt(PATH_TO_EMULATOR+'PCA_eigenvectors.csv'))
 
-    def check_interpret_k_z_input(self,k: float|list, z: float|list):
+    def check_interpret_k_z_input(self,k: Union[float,list], z: Union[float,list]):
         # print('k,z types:',type(z) ,type(k))
         single_redshift = False
         if type(k) == float and type(z) == float:
@@ -38,7 +39,7 @@ class TBDemu():
             
         
 
-    def predict(self, k: float|list, z: float|list, f: float = 1.0, vk: float = 0., Gamma: float = 1e-10, p: float = 0.0) -> list:
+    def predict(self, k: Union[float,list], z: Union[float,list], f: float = 1.0, vk: float = 0., Gamma: float = 1e-10, p: float = 0.0) -> list:
         
         k,z,single_redshift = self.check_interpret_k_z_input(k,z)
         
