@@ -40,7 +40,7 @@ class OBDemu():
         assert Gamma >= 0, "Gamma is not positive, chosen Gamma is: {}".format(Gamma)
         for i in range(len(k)):
             assert k[i] <= 10 and k[i] >= 1e-6, "found k value not in good range (1e-6,10) [1/Mpc]. Value is {}".format(k[i])
-        assert z >= 0, "z is not positive, chosen z is: {}".format(z)
+        assert z.all() >= 0, "z is not positive, chosen z is: {}".format(z)
 
         # These are only to check if the parameter is in a range where low error is expected.
         # Fit can still function well outside this range if the values are not extreme
