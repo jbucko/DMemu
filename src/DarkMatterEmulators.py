@@ -27,6 +27,9 @@ class OBDemu():
         :param h: present value of hubble constant
         :return: ratio of nonlinear matter power spectra of decaying DM and LCDM
         """
+        # convert k,z into numpy arrays
+        k = np.array(k)
+        z = np.array(z)
 
         # convert big omegas (input) to small omegas (used for the fit)
         wb = Ob*h*h
