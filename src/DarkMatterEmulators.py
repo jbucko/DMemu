@@ -15,6 +15,25 @@ class OBDemu():
     def __init__(self):
         print('One-body decays emulator loaded!')
 
+    def check_interpret_k_z_input(self,k: Union[float,list], z: Union[float,list]):
+        # print('k,z types:',type(z) ,type(k))
+        if type(k) == float and type(z) == float:
+            k = np.array([k])
+            z = np.array([z])
+        elif type(z) == float and type(k) != float:
+            if type(k) == list:
+                k = np.array(k)
+            z = np.array([z])
+        elif type(k) == float and type(z) != float:
+            if type(z) == list:
+                z = np.array(z)
+            k_val = k
+            k = np.array([k_val for _ in range(len(z))])
+        elif type(k) != float and type(z) != float:
+            if len(k) != len(z):
+                raise Exception("Dimensions of k and z do not match:",len(k),len(z))
+        return k,z
+
     def predict(self, k: Union[float,list], z: Union[float,list], Gamma: float = 1e-10, f: float = 0., Ob: float =0.049, Om: float = 0.315, h:float = 0.67):
         """
         Enqvist et al. 2015 calibrated on simulations by Jonathan Hubert & Aurel Schneider
@@ -27,16 +46,15 @@ class OBDemu():
         :param h: present value of hubble constant
         :return: ratio of nonlinear matter power spectra of decaying DM and LCDM
         """
-        # convert k,z into numpy arrays
-        k = np.array(k)
-        z = np.array(z)
+        # check and convert k,z into numpy arrays
+        k,z = self.check_interpret_k_z_input(k,z)
+        
+        # convert k from h/Mpc to 1/Mpc
+        k = k*h
 
         # convert big omegas (input) to small omegas (used for the fit)
         wb = Ob*h*h
         wm = Om*h*h
-
-        # convert k from h/Mpc to 1/Mpc
-        k = k*h
 
         # Run some checks
         assert f >= 0. and f <= 1., "f is not within (0,1), chosen f is: {}".format(f) # well-defined f
