@@ -34,6 +34,15 @@ class OBDemu():
                 raise Exception("Dimensions of k and z do not match:",len(k),len(z))
         return k,z
 
+    def print_parameter_space(self):
+        print('k: k<10 (1/Mpc)')
+        print('z: z<1')
+        print('f: f in [0,1]')
+        print('Gamma: Gamma in [0,1/31.6] (1/Gyr)')
+        print('omega_b: omega_b in [0.019,0.026]')
+        print('omega_m: omega_m in [0.09,0.28]')
+        print('h: h in [0.6,0.8]')
+
     def predict(self, k: Union[float,list], z: Union[float,list], Gamma: float = 1e-10, f: float = 0., Ob: float =0.049, Om: float = 0.315, h:float = 0.67):
         """
         Enqvist et al. 2015 calibrated on simulations by Jonathan Hubert & Aurel Schneider
@@ -59,12 +68,14 @@ class OBDemu():
         # Run some checks
         assert f >= 0. and f <= 1., "f is not within (0,1), chosen f is: {}".format(f) # well-defined f
         assert Gamma >= 0, "Gamma is not positive, chosen Gamma is: {}".format(Gamma)
-        for i in range(len(k)):
-            assert k[i] <= 10 and k[i] >= 1e-6, "found k value not in good range (1e-6,10) [1/Mpc]. Value is {}".format(k[i])
+        # for i in range(len(k)):
+        assert k.all() >= 0, "k is not positive, chosen z is: {}".format(k)
         assert z.all() >= 0, "z is not positive, chosen z is: {}".format(z)
 
         # These are only to check if the parameter is in a range where low error is expected.
         # Fit can still function well outside this range if the values are not extreme
+        if(k.any() > 10): # We know the fitting function is more accurate for lower redshifts < 1
+            print("You have chosen k>10 1/Mpc; k={}!\n-> the fit extrapolation could be inacurate".format(k))
         if(z.any() > 1): # We know the fitting function is more accurate for lower redshifts < 1
             print("You have chosen a higher redshift z={}!\n-> the fit could be unaccurate with this choice! (error might be > 10%)".format(z))
         if(Gamma >= 0.0316): # We know the fitting function is more accurate for higher lifetimes > 31.6 Gyr
@@ -129,7 +140,13 @@ class TBDemu():
             if len(k) != len(z):
                 raise Exception("Dimensions of k and z do not match:",len(k),len(z))
         return k,z,single_redshift
-            
+
+    def print_parameter_space(self):
+        print('k: k<6 (h/Mpc)')
+        print('z: z<2.35')
+        print('f: f in [0,1]')
+        print('vk: vk in [0,5000] (km/s)')
+        print('Gamma: Gamma in [0,1/13.5] (1/Gyr)')
             
         
 
