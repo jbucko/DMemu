@@ -142,7 +142,7 @@ class TBDemu():
         return k,z,single_redshift
 
     def print_parameter_space(self):
-        print('k: k<6 (h/Mpc)')
+        print('k: k<5.9 (h/Mpc)')
         print('z: z<2.35')
         print('f: f in [0,1]')
         print('vk: vk in [0,5000] (km/s)')
