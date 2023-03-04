@@ -79,11 +79,11 @@ class OBDemu():
         if(np.any(z > 1)): # We know the fitting function is more accurate for lower redshifts < 1
             print("You have chosen z>1; z={}!\n-> the fit could be unaccurate with this choice! (error might be > 10%)".format(z))
         if(Gamma >= 0.0316): # We know the fitting function is more accurate for higher lifetimes > 31.6 Gyr
-            print("You have chosen a short lifetime of {} Gyr!\n-> the fit could be unaccurate with this choice! (error might be > 10%)".format(Gamma**-1.))
+            print("You have chosen a short lifetime of {} Gyr<31.6!\n-> the fit could be unaccurate with this choice! (error might be > 10%)".format(Gamma**-1.))
         if(wb< 0.019 or wb > 0.026):
-            print("You have chosen wb={}!\n-> the fit could be unaccurate with this choice! (error might be > 10%)".format(wb))
+            print("You have chosen omega_b={}!\n-> the fit could be unaccurate with this choice! (error might be > 10%)".format(wb))
         if(wm< 0.09 or wm > 0.28):
-            print("You have chosen wm={}!\n-> the fit could be unaccurate with this choice! (error might be > 10%)".format(wm))
+            print("You have chosen omega_m={}!\n-> the fit could be unaccurate with this choice! (error might be > 10%)".format(wm))
         if(h< 0.6 or h > 0.8):
             print("You have chosen h={}!\n-> the fit could be unaccurate with this choice! (error might be > 10%)".format(h))
 
