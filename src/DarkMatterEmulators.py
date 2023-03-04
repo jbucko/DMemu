@@ -69,15 +69,15 @@ class OBDemu():
         assert f >= 0. and f <= 1., "f is not within (0,1), chosen f is: {}".format(f) # well-defined f
         assert Gamma >= 0, "Gamma is not positive, chosen Gamma is: {}".format(Gamma)
         # for i in range(len(k)):
-        assert k.all() >= 0, "k is not positive, chosen z is: {}".format(k)
-        assert z.all() >= 0, "z is not positive, chosen z is: {}".format(z)
+        assert np.all(k>=0), "k is not positive, chosen z is: {}".format(k)
+        assert np.all(z>=0), "z is not positive, chosen z is: {}".format(z)
 
         # These are only to check if the parameter is in a range where low error is expected.
         # Fit can still function well outside this range if the values are not extreme
-        if(k.any() > 10): # We know the fitting function is more accurate for lower redshifts < 1
+        if(np.any(k > 10)): # We know the fitting function is more accurate for lower redshifts < 1
             print("You have chosen k>10 1/Mpc; k={}!\n-> the fit extrapolation could be inacurate".format(k))
-        if(z.any() > 1): # We know the fitting function is more accurate for lower redshifts < 1
-            print("You have chosen a higher redshift z={}!\n-> the fit could be unaccurate with this choice! (error might be > 10%)".format(z))
+        if(np.any(z > 1)): # We know the fitting function is more accurate for lower redshifts < 1
+            print("You have chosen z>1; z={}!\n-> the fit could be unaccurate with this choice! (error might be > 10%)".format(z))
         if(Gamma >= 0.0316): # We know the fitting function is more accurate for higher lifetimes > 31.6 Gyr
             print("You have chosen a short lifetime of {} Gyr!\n-> the fit could be unaccurate with this choice! (error might be > 10%)".format(Gamma**-1.))
         if(wb< 0.019 or wb > 0.026):
