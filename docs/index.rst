@@ -11,7 +11,8 @@ Contents
    :maxdepth: 3
 
    installation
-   emulators
+   one-body
+   two-body
    contributing
    changelog
 
