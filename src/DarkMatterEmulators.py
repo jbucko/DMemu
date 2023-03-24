@@ -36,7 +36,7 @@ class OBDemu():
 
     def print_parameter_space(self):
         print('k: k<10 (1/Mpc)')
-        print('z: z<1')
+        print('z: z<2.35')
         print('f: f in [0,1]')
         print('Gamma: Gamma in [0,1/31.6] (1/Gyr)')
         print('omega_b: omega_b in [0.019,0.026]')
@@ -76,8 +76,8 @@ class OBDemu():
         # Fit can still function well outside this range if the values are not extreme
         if(np.any(k > 10)): # We know the fitting function is more accurate for lower redshifts < 1
             print("You have chosen k>10 1/Mpc; k={}!\n-> the fit extrapolation could be inacurate".format(k))
-        if(np.any(z > 1)): # We know the fitting function is more accurate for lower redshifts < 1
-            print("You have chosen z>1; z={}!\n-> the fit could be unaccurate with this choice! (error might be > 10%)".format(z))
+        if(np.any(z > 2.35)): # We know the fitting function is more accurate for lower redshifts < 1
+            print("You have chosen z>2.35; z={}!\n-> the fit could be unaccurate with this choice!".format(z))
         if(Gamma >= 0.0316): # We know the fitting function is more accurate for higher lifetimes > 31.6 Gyr
             print("You have chosen a short lifetime of {} Gyr<31.6!\n-> the fit could be unaccurate with this choice! (error might be > 10%)".format(Gamma**-1.))
         if(wb< 0.019 or wb > 0.026):
@@ -150,7 +150,7 @@ class TBDemu():
             
         
 
-    def predict(self, k: Union[float,list], z: Union[float,list], f: float = 1.0, vk: float = 0., Gamma: float = 1e-10, p: float = 0.0) -> list:
+    def predict(self, k: Union[float,list], z: Union[float,list], f: float = 1.0, vk: float = 0., Gamma: float = 1e-10, allow_z_extrapolation = False ,p: float = 0.0) -> list:
         
         k,z,single_redshift = self.check_interpret_k_z_input(k,z)
         
@@ -158,8 +158,12 @@ class TBDemu():
         kmin = 1e-3
         kmax = 5.9
         nsteps_emul = 300
+        z_max = max(z)
         # k_int = np.logspace(np.log10(kmin),np.log10(kmax),nsteps_emul)
-        if max(z)>2.35: raise Exception("Too high redshift encountered (>2.35). Aborting...")
+        if z_max>2.35 and allow_z_extrapolation == False: 
+            raise Exception("Too high redshift encountered (>2.35). Aborting...")
+        if z_max>2.35 and allow_z_extrapolation == True: 
+            print("You have chosen z>2.35; z={}!\n-> untested extrapolation!".format(z))
         if vk<0 or vk>5000: raise Exception("Velocity kick outside the training domain [0-5000] km/s. Aborting...")
         if Gamma<0 or Gamma>1/13.5: raise Exception("Decay rate outside the training domain [0-1/13.5] 1/Gyr. Aborting...")
         if f<0.0 or f>1.0: raise Exception("Fraction of 2bDDM outside the training domain [0-1]. Aborting...")
