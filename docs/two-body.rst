@@ -101,7 +101,7 @@ The above code provides three suppression values, first for :math:`k=0.1` and :m
 Extrapolation
 ^^^^^^^^^^^^^
 
-Extrapolation for :math:`\Gamma`, :math:`v_k`, :math:`f` and :math:`z` is not allowed as the trained architecture cannot reliably predict outside the training domain. Extrapolation for :math:`k>6` h/Mpc is done by adding a constant suppression continuously attached to the one provided by an emulator, see the figure below. 
+Extrapolation for :math:`\Gamma`, :math:`v_k`, :math:`f` and :math:`z` is not allowed as the trained architecture cannot reliably predict outside the training domain. Extrapolation for :math:`k>6` h/Mpc is done by adding a constant suppression continuously attached to the one provided by an emulator, see the figure below. However, one can ask for redshifts higher than 2.35 by setting ``allow_z_extrapolation=True`` in ``TBD.predict(...)`` function.
 
 .. figure:: ../examples/tbdemu_extrapolation.jpeg
    :width: 65%

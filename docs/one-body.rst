@@ -56,7 +56,7 @@ The analytical fitting formulae can be easily and naturally extrapolated, howeve
 - decay rate: :math:`\Gamma \in [0,1/31.6]` Gyr :math:`^{-1}`  
 - fraction of 1bDDM: :math:`f \in [0,1]`  
 - scales: :math:`k < 10` 1/Mpc  
-- redshifts: :math:`z < 1.0`
+- redshifts: :math:`z < 2.35`
 - baryonic abundance :math:`\omega_b \in [0.019,0.026]`
 - matter abundance :math:`\omega_m \in [0.09,0.28]`
 - hubble parameter :math:`h \in [0.6,0.8]`
