@@ -110,6 +110,6 @@ Extrapolation for :math:`\Gamma`, :math:`v_k`, :math:`f` and :math:`z` is not al
 References
 ^^^^^^^^^^
 
-.. [#] Bucko et al. 2023, in prep.
+.. [#] Bucko, J., Giri, S. K., Hervas Peters, F., & Schneider, A. Probing the two-body decaying dark matter scenario with weak lensing and the cosmic microwave background. A&A 683 A152 (2024). https://doi.org/10.1051/0004-6361/202347844
 .. [#] Potter, D., Stadel, J. & Teyssier, R. PKDGRAV3: beyond trillion particle cosmological simulations for the next era of galaxy surveys. Comput. Astrophys. 4, 2 (2017). https://doi.org/10.1186/s40668-017-0021-1
 .. [#] Sitzmann, V., Martel, J. N. P., Bergman, A. W., Lindell, D. B., & Wetzstein, G. (2020). Implicit Neural Representations with Periodic Activation Functions. Proc. NeurIPS.
